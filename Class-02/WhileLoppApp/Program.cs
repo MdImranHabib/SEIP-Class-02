@@ -13,17 +13,18 @@ namespace WhileLoppApp
             int i = 0;
              while(true)
             {
-                if(i % 2 != 0)
-                {
-                    i++;
-                    continue;
-                }
-                Console.WriteLine(i);
                 i++;
-                if(i>100)
+                if(i == 100)
                 {
                     break;
                 }
+
+                if(i%2 == 1)
+                {
+                    continue;
+                }
+
+                Console.WriteLine(i);
             }
         }
     }
