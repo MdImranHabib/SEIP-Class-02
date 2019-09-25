@@ -10,32 +10,42 @@ namespace MethodApp_04
     {
         static void Main(string[] args)
         {
-            Console.Write("Enter First Name: ");
-            string firstName = Console.ReadLine();
+            string status = "";
 
-            Console.Write("Enter Last Name: ");
-            string lastName = Console.ReadLine();
+            do {
+                Console.Write("Enter First Name: ");
+                string firstName = Console.ReadLine();
 
-            Console.Write("Enter Subject: ");
-            string subject = Console.ReadLine();
+                Console.Write("Enter Last Name: ");
+                string lastName = Console.ReadLine();
 
-            Console.Write("Enter Mark: ");
-            int mark =Convert.ToInt32(Console.ReadLine());
+                Console.Write("Enter Subject: ");
+                string subject = Console.ReadLine();
 
-            string fullName = GetFullName(firstName, lastName);
+                Console.Write("Enter Mark: ");
+                int mark = Convert.ToInt32(Console.ReadLine());
 
-            string grade = GetGrade(mark);
+                string fullName = GetFullName(firstName, lastName);
 
-            bool isPassed = GetResultStatus(mark);
+                string grade = GetGrade(mark);
 
-            if (isPassed)
-            {
-                Console.WriteLine("Hello! " + fullName + "Congratulation! You have passed.\n And your frade is: " +  grade);
+                bool isPassed = GetResultStatus(mark);
+
+                if (isPassed)
+                {
+                    Console.WriteLine("Hello! " + fullName + " Congratulation! You have passed.\nAnd your grade is: " + grade);
+                }
+                else
+                {
+                    Console.WriteLine("Sorry you have failed!");
+                }
+
+                Console.WriteLine("Do you want to continue (y/n)?");
+                status = Console.ReadLine();
             }
-            else
-            {
-                Console.WriteLine("Sorry you have failed!");
-            }
+            while (status == "y");
+
+            Console.ReadKey();
         }
 
         private static bool GetResultStatus(int mark)
@@ -48,7 +58,7 @@ namespace MethodApp_04
             string fName = firstName;
             string lName = lastName;
 
-            string fullName = fName + lastName;
+            string fullName = fName + " " + lastName;
 
             return fullName;
         }
