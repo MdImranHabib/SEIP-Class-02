@@ -33,7 +33,7 @@ namespace MethodApp_04
 
                 if (isPassed)
                 {
-                    Console.WriteLine("Hello! " + fullName + " Congratulation! You have passed.\nAnd your grade is: " + grade);
+                    Console.WriteLine("Hello! " + fullName + " Congratulation! You have passed in " + subject + ".\nAnd your grade is: " + grade);
                 }
                 else
                 {
